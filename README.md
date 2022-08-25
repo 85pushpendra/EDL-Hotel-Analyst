@@ -38,6 +38,34 @@ Out main objective is perform EDA on the given dataset and draw useful conclusio
  29  | total_of_special_requests       |119390 non-null  |int64     |total no. of special request.
  30  | reservation_status              |119390 non-null  |object    |Whether a customer has checked out or canceled,or not showed 
  31  | reservation_status_date         |119390 non-null  |object    |Date of making reservation status.
+
+
 dtypes: float64(4), int64(16), object(12)
 Total number of rows in data: 119390
 Total number of columns: 32
+## Data Cleaning and Feature Engineering
+### (1) Removing Duplicate rows
+All duplicate rows were dropped.
+
+### (2) Handling null values
+- Null values in columns `company` and `agent` were replaced by 0.
+- Null values in column `country` were replaced by 'others'.
+- Null values in column `children` were replaced by the mean of the column.
+  
+
+### (3) Converting columns to appropriate data types
+
+- Changed data type of `children`, `company`, `agent` to int type.
+- Changed data type of `reservation_status_date` to date type.
+
+### (4) Removing outliers
+
+- One outlier was found in the `adr` column. Simply dropped it.
+
+### (5) Creating new columns
+- Created new column `total_stay` by adding `stays_in_weekend_nights`+`stays_in_week_nights`.
+- Created new column `total_people` by adding `adults`+`children`+`babies`.
+
+## Exploratory Data Analysis
+
+Performed EDA and tried answering the following questions
