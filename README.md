@@ -1,4 +1,4 @@
-# EDL-Hotel-Analyst
+# EDA-Hotel-Analyst
 ## Objective
 I have provided with a hotel bookings dataset.
 
